@@ -1,0 +1,35 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #f9fafb; color: #111; }
+
+.navbar { display: flex; gap: 1.5rem; align-items: center; padding: 1rem 2rem;
+  background: #1e3a5f; color: #fff; }
+.navbar .brand { font-weight: 700; font-size: 1.2rem; margin-right: auto; }
+.navbar a { color: #fff; text-decoration: none; }
+
+main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+h1 { margin-bottom: 1.5rem; }
+h2 { margin-bottom: 0.75rem; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.card { background: #fff; border-radius: 8px; padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.card h2 { font-size: 0.9rem; color: #555; }
+.card p { font-size: 2rem; font-weight: 700; margin-top: 0.25rem; }
+
+.upload section { background: #fff; border-radius: 8px; padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-bottom: 1rem; }
+.upload form { display: flex; gap: 0.75rem; align-items: center; }
+.status { margin-top: 0.75rem; color: #1e3a5f; font-weight: 600; }
+
+.chat { display: flex; flex-direction: column; height: 70vh; }
+.messages { flex: 1; overflow-y: auto; background: #fff; border-radius: 8px;
+  padding: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,.08); margin-bottom: 1rem; }
+.message { margin-bottom: 0.75rem; line-height: 1.5; }
+.message.assistant { color: #1e3a5f; }
+.input-row { display: flex; gap: 0.5rem; }
+.input-row input { flex: 1; padding: 0.6rem 0.75rem; border: 1px solid #ccc;
+  border-radius: 6px; font-size: 1rem; }
+
+button { padding: 0.6rem 1.2rem; background: #1e3a5f; color: #fff;
+  border: none; border-radius: 6px; cursor: pointer; font-size: 0.95rem; }
+button:hover { background: #2a4f7f; }

@@ -9,10 +9,12 @@ router = APIRouter()
 
 async def _insert_transactions(contents: bytes, kind: str) -> int:
     transactions = parse_csv(io.StringIO(contents.decode("utf-8")), kind=kind)
-    docs = [
-        {**t.model_dump(), "uploaded_at": datetime.now(timezone.utc)}
-        for t in transactions
-    ]
+    docs = []
+    for t in transactions:
+        doc = t.model_dump()
+        doc["date"] = datetime(doc["date"].year, doc["date"].month, doc["date"].day, tzinfo=timezone.utc)
+        doc["uploaded_at"] = datetime.now(timezone.utc)
+        docs.append(doc)
     if docs:
         collection = db.get_db()["transactions"]
         await collection.insert_many(docs)
